@@ -1,0 +1,1 @@
+Search.setIndex({objects:{},objtypes:{},terms:{search:0,mpd:0,album:0,art:0,welcom:0,modul:0,indic:0,content:0,grabber:0,index:0,tabl:0,document:0,page:0},titles:["Welcome to MPD Album Art Grabber&#8217;s documentation!"],filenames:["index"],objnames:{}})
