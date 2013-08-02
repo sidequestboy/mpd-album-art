@@ -28,6 +28,10 @@ import os, sys
 from urllib import request
 
 image_extensions = (".jpg", ".jpeg", ".png")
+"""Extensions to qualify a file as an image"""
+
+last_fm_api_key = "6b6d8768f0c41f7e82da0de44e1db76a"
+"""LastFM API key for the application"""
 
 
 class Grabber(object):
@@ -41,7 +45,7 @@ class Grabber(object):
         last_fm_api_key: LastFM API key        
 
     """
-    def __init__(self, save_dir, library_dir, last_fm_api_key, link_path=None):
+    def __init__(self, save_dir, library_dir, link_path=None):
         super(Grabber, self).__init__()
         self.save_dir = save_dir
         if link_path is None:
@@ -49,7 +53,6 @@ class Grabber(object):
         else:
             self.link_path = link_path
         self.library_dir = library_dir
-        self.last_fm_api_key = last_fm_api_key
 
     def get_art(self, song):
         """Get artwork from LastFM.
@@ -85,7 +88,7 @@ class Grabber(object):
             return file_path
 
         # Define the search network compatible with LastFM API
-        network = LastFMNetwork(api_key = self.last_fm_api_key)
+        network = LastFMNetwork(api_key = last_fm_api_key)
 
         album_search = AlbumSearch(song['album'], network)
 
@@ -216,7 +219,6 @@ if __name__ == '__main__':
     grabber = Grabber(
         save_dir="/home/jamie/.conky/scripts/album_art",
         library_dir="/home/jamie/Music/Library",
-        last_fm_api_key="6b6d8768f0c41f7e82da0de44e1db76a",
         )
 
     try:
