@@ -27,7 +27,7 @@ mpd_client = MPDClient()
 mpd_client.connect("localhost", 6600)
 # ...
 ```
-### Find what's making those vibes
+### Find what's making those groovy vibes
 ```python
 # ...
 song = mpd_client.currentsong()
@@ -54,4 +54,4 @@ grabber.get_local_art(song)
 ```
 This will create a symlink called `"current"` in `save_dir` pointing to the largest image file in the directory
 
-Issuing these commands when there's no *music pumping* will remove the symlink.
+Issuing these commands when there's no _music pumping_ will remove the symlink.
