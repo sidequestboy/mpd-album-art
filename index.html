@@ -1,113 +1,120 @@
+<!DOCTYPE html>
+<html>
 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-
-<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Welcome to MPD Album Art Grabber’s documentation! &mdash; MPD Album Art Grabber 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="MPD Album Art Grabber 0.1 documentation" href="#" /> 
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="MPD Album Art Grabber : Python module to query current MPD song, and find an album art match from local filesystem or LastFM." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>MPD Album Art Grabber</title>
   </head>
+
   <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li><a href="#">MPD Album Art Grabber 0.1 documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
-            
-  <div class="section" id="welcome-to-mpd-album-art-grabber-s-documentation">
-<h1>Welcome to MPD Album Art Grabber&#8217;s documentation!<a class="headerlink" href="#welcome-to-mpd-album-art-grabber-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul class="simple">
-</ul>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
-</ul>
-</div>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jameh/mpd-album-art-grabber">View on GitHub</a>
 
+          <h1 id="project_title">MPD Album Art Grabber</h1>
+          <h2 id="project_tagline">Python module to query current MPD song, and find an album art match from local filesystem or LastFM.</h2>
 
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Welcome to MPD Album Art Grabber&#8217;s documentation!</a><ul>
-</ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jameh/mpd-album-art-grabber/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jameh/mpd-album-art-grabber/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
     </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li><a href="#">MPD Album Art Grabber 0.1 documentation</a> &raquo;</li> 
-      </ul>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="mpd-album-art-grabber" class="anchor" href="#mpd-album-art-grabber"><span class="octicon octicon-link"></span></a>mpd-album-art-grabber</h1>
+
+<p>Python module to query current MPD song, and find an album art match from local filesystem or LastFM.</p>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p><code>pylast</code>
+<code>python-mpd2</code></p>
+
+<div class="highlight"><pre><span class="nv">$ </span>pip install -r requirements.txt
+</pre></div>
+
+<h2>
+<a name="example-usage" class="anchor" href="#example-usage"><span class="octicon octicon-link"></span></a>Example Usage</h2>
+
+<h3>
+<a name="play-some-jams" class="anchor" href="#play-some-jams"><span class="octicon octicon-link"></span></a>Play some jams</h3>
+
+<p>Start up your MPD session as normal, e.g.</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>mpd
+</pre></div>
+
+<p>Take note of which port it's running on (normally <code>localhost:6600</code>).</p>
+
+<h3>
+<a name="hook-up-to-the-mpd-server" class="anchor" href="#hook-up-to-the-mpd-server"><span class="octicon octicon-link"></span></a>Hook up to the MPD server</h3>
+
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">mpd_album_art</span><span class="o">,</span> <span class="nn">mpd</span>
+<span class="c"># Open an MPD client</span>
+<span class="n">mpd_client</span> <span class="o">=</span> <span class="n">MPDClient</span><span class="p">()</span>
+<span class="c"># Connect to MPD session</span>
+<span class="n">mpd_client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="mi">6600</span><span class="p">)</span>
+<span class="c"># ...</span>
+</pre></div>
+
+<h3>
+<a name="find-whats-making-those-groovy-vibes" class="anchor" href="#find-whats-making-those-groovy-vibes"><span class="octicon octicon-link"></span></a>Find what's making those groovy vibes</h3>
+
+<div class="highlight"><pre><span class="c"># ...</span>
+<span class="n">song</span> <span class="o">=</span> <span class="n">mpd_client</span><span class="o">.</span><span class="n">currentsong</span><span class="p">()</span>
+<span class="c"># ...</span>
+</pre></div>
+
+<h3>
+<a name="grab-some-art" class="anchor" href="#grab-some-art"><span class="octicon octicon-link"></span></a>Grab some art</h3>
+
+<p>Artwork is saved to <code>save_dir</code>
+<code>library_dir</code> should be where your music files are (this is used in <code>Grabber.get_local_art</code>)</p>
+
+<div class="highlight"><pre><span class="c"># ...</span>
+<span class="n">grabber</span> <span class="o">=</span> <span class="n">mpd_album_art</span><span class="o">.</span><span class="n">Grabber</span><span class="p">(</span>
+    <span class="n">save_dir</span><span class="o">=</span><span class="s">"/home/jamie/.conky/scripts/album_art"</span><span class="p">,</span>
+    <span class="n">library_dir</span><span class="o">=</span><span class="s">"/home/jamie/Music/Library"</span>
+    <span class="p">)</span>
+<span class="n">grabber</span><span class="o">.</span><span class="n">get_art</span><span class="p">(</span><span class="n">song</span><span class="p">)</span>
+</pre></div>
+
+<p>Now, if the album isn't too <em>obscurely titled</em>, you should have its artwork in <code>save_dir</code>
+saved as something like <code>"Artist_Name_Album_Name_h4sh.png"</code>.
+And a symlink should exist in there saved as <code>"current"</code> pointing to it.</p>
+
+<p>You can also check your local filesystem for artwork in the music directory:</p>
+
+<div class="highlight"><pre><span class="n">grabber</span><span class="o">.</span><span class="n">get_local_art</span><span class="p">(</span><span class="n">song</span><span class="p">)</span>
+</pre></div>
+
+<p>This will create a symlink called <code>"current"</code> in <code>save_dir</code> pointing to the largest image file in the directory</p>
+
+<p>Issuing these commands when there's no <strong>music pumping</strong> will remove the symlink.</p>
+      </section>
     </div>
-    <div class="footer">
-        &copy; Copyright 2013, Jamie Macdonald.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">MPD Album Art Grabber maintained by <a href="https://github.com/jameh">jameh</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
     </div>
+
+    
+
   </body>
 </html>
