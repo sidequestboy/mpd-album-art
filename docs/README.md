@@ -9,7 +9,7 @@ For all cases, make sure to change directory to docs/
 ```
 cd docs
 ```
-blah
+
 ## Make the text
 ```sh
 make text
