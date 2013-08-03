@@ -6,13 +6,13 @@ If you wish to build the docs yourself, there are a bunch of make targets you
 can choose from:
 
 All subsequent commands issue with the working directory docs/
-```
+```sh
 cd docs
 ```
 
 ## Grab Requirements
 For all cases, install Sphinx, and the app dependencies for the Sphinx autodocs extension.
-```
+```sh
 pip install -r doc-requirements
 ```
 
