@@ -5,9 +5,15 @@ The docs are hosted on https://mpd-album-art-grabber.readthedocs.org
 If you wish to build the docs yourself, there are a bunch of make targets you
 can choose from:
 
-For all cases, make sure to change directory to docs/
+All subsequent commands issue with the working directory docs/
 ```
 cd docs
+```
+
+## Grab Requirements
+For all cases, install Sphinx, and the app dependencies for the Sphinx autodocs extension.
+```
+pip install -r doc-requirements
 ```
 
 ## Make the text
