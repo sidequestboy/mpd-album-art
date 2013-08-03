@@ -25,7 +25,10 @@ from pylast import LastFMNetwork, AlbumSearch
 from mpd import MPDClient, socket
 
 import os, sys
-from urllib import request
+try:
+    from urllib.request import urlretrieve
+except ImportError:
+    from urllib import urlretrieve
 
 _image_extensions = (".jpg", ".jpeg", ".png")
 """Extensions to qualify a file as an image"""
@@ -128,7 +131,7 @@ class Grabber(object):
         else:
             try:
                 # Download the image
-                request.urlretrieve(img_url, file_path)
+                urlretrieve(img_url, file_path)
                 self.remove_current_link()
             except HTTPError as e:
                 sys.stderr.write(e + "\n")
