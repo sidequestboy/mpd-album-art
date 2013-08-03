@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# MPD Album Art Grabber documentation build configuration file, created by
+# MPD Album Art documentation build configuration file, created by
 # sphinx-quickstart on Sat Aug  3 03:22:51 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -26,7 +26,7 @@ sys.path.insert(0, os.path.abspath('../src'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode', 'sphinx.ext.doctest']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -41,7 +41,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'MPD Album Art Grabber'
+project = 'MPD Album Art'
 copyright = '2013, Jamie Macdonald'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -168,7 +168,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MPDAlbumArtGrabberdoc'
+htmlhelp_basename = 'MPDAlbumArtdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -187,7 +187,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'MPDAlbumArtGrabber.tex', 'MPD Album Art Grabber Documentation',
+  ('index', 'MPDAlbumArt.tex', 'MPD Album Art Documentation',
    'Jamie Macdonald', 'manual'),
 ]
 
@@ -217,7 +217,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'mpdalbumartgrabber', 'MPD Album Art Grabber Documentation',
+    ('index', 'mpdalbumart', 'MPD Album Art Documentation',
      ['Jamie Macdonald'], 1)
 ]
 
@@ -231,8 +231,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'MPDAlbumArtGrabber', 'MPD Album Art Grabber Documentation',
-   'Jamie Macdonald', 'MPDAlbumArtGrabber', 'One line description of project.',
+  ('index', 'MPDAlbumArt', 'MPD Album Art Documentation',
+   'Jamie Macdonald', 'MPDAlbumArt', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -252,7 +252,7 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = 'MPD Album Art Grabber'
+epub_title = 'MPD Album Art'
 epub_author = 'Jamie Macdonald'
 epub_publisher = 'Jamie Macdonald'
 epub_copyright = '2013, Jamie Macdonald'
