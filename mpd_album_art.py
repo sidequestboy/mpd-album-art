@@ -16,6 +16,10 @@
 :copyright: 2013 Jamie Macdonald
 :license: GNU General Public License (GPL) version 3
 
+.. testsetup::
+
+    from mpd_album_art import Grabber
+
 """
 
 from pylast import LastFMNetwork, AlbumSearch
@@ -23,8 +27,10 @@ from mpd import MPDClient, socket
 
 import os, sys
 try:
+    # Python 3
     from urllib.request import urlretrieve
 except ImportError:
+    # Python 2
     from urllib import urlretrieve
 
 _image_extensions = (".jpg", ".jpeg", ".png")
@@ -44,7 +50,20 @@ class Grabber(object):
     :param str link_path:
         Path to symlink to current image file. By default,
         ``os.path.join(save_dir, "current")``
+    
+    Construct a Grabber with ``save_dir = ~/.covers``:
 
+    >>> import os
+    >>> home_dir = os.environ['HOME']
+    >>> cover_path = os.path.join(home_dir, '.covers')
+    >>> grabber = Grabber(cover_path)
+
+    specify more stuff:
+
+    >>> music_path = os.path.join(home_dir, 'Music/Library')
+    >>> current_cover_link = os.path.join(home_dir, '.current_cover')
+    >>> grabber = Grabber(save_dir=cover_path, library_dir=music_path,
+    ...                   link_path=current_cover_link)
     """
     def __init__(self, save_dir, library_dir=None, link_path=None):
         super(Grabber, self).__init__()
@@ -53,10 +72,10 @@ class Grabber(object):
         """Directory into which Grabber should download new images."""
         
         if library_dir is None:
-            library_dir = os.path.join(os.environment('HOME'), 'Music')
+            library_dir = os.path.join(os.environ['HOME'], 'Music')
         self.library_dir = library_dir
         """Directory MPD is currently playing from."""
-        
+
         if link_path is None:
             link_path = os.path.join(save_dir, "current")
         self.link_path = link_path
@@ -76,8 +95,8 @@ class Grabber(object):
         :param dict song: 
             A dictionary with keys ``'album'`` and ``'artist'`` to correspond
             with string representations of the album and artist (resp.) of 
-            interest. Such a dictionary returns from
-            ``MPDClient.currentsong()``
+            interest. Use ``MPDClient.currentsong()`` to return uch a dictionary
+            .
         :return:
             A string representation of the local file path to the image file for
             ``song`` or ``None`` if no results found
@@ -150,6 +169,8 @@ class Grabber(object):
             A string representation of the local file path to the largest image 
             file for ``song`` found in ``song_folder``, or ``None`` if no results
             found
+
+        >>> 
         """
         song_folder = os.path.dirname(os.path.join(self.library_dir,
                                                    song['file']))
