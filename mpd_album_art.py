@@ -69,19 +69,14 @@ class Grabber(object):
         super(Grabber, self).__init__()
 
         self.save_dir = save_dir
-        """Directory into which Grabber should download new images."""
         
         if library_dir is None:
             library_dir = os.path.join(os.environ['HOME'], 'Music')
         self.library_dir = library_dir
-        """Directory MPD is currently playing from."""
 
         if link_path is None:
             link_path = os.path.join(save_dir, "current")
         self.link_path = link_path
-        """Path to symlink to current image file. By default,
-        ``os.path.join(save_dir, "current")``.
-        """
 
     def get_art(self, song):
         """Get artwork from LastFM.
@@ -131,11 +126,9 @@ class Grabber(object):
         # Get the first hit, since there is at least one result -
         # the "I'm feeling lucky" approach.
         album = album_search.get_next_page()[0]
-        """First ``pylast.Album`` object from results list."""
 
         # Get url of album art from ``pylast.AlbumSearch`` object
         img_url = album.get_cover_image()
-        """External URL of cover image for ``album``"""
 
         file_path = os.path.join(self.save_dir,
                                  self._get_save_name(song, img_url))
@@ -183,7 +176,6 @@ class Grabber(object):
         # Pick the largest file
         images = [os.path.join(song_folder, i) for i in images]
         file_path = max(images, key=os.path.getsize)
-        """Largest image file file path from images list"""
 
         if os.path.realpath(self.link_path) != file_path:
             # Set the link to point to the file_path
