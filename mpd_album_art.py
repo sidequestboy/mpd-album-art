@@ -162,8 +162,6 @@ class Grabber(object):
             A string representation of the local file path to the largest image 
             file for ``song`` found in ``song_folder``, or ``None`` if no results
             found
-
-        >>> 
         """
         song_folder = os.path.dirname(os.path.join(self.library_dir,
                                                    song['file']))
