@@ -1,5 +1,38 @@
-__pycache__
-venv
-build/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
 *.egg
-*.py[co]
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# docs build directory
+_build
