@@ -8,14 +8,20 @@ $ pip install mpd-album-art
 ```
 
 ## Example Usage
-### Play some jams
-
+#### Play some jams
 Start up your MPD session as normal, e.g.
 ```sh
 $ mpd
 ```
 Take note of which port it's running on (normally `localhost:6600`).
-### Hook up to the MPD server
+
+### With the commandline script (the easy way)
+```sh
+$ mpd_album_art.py -n localhost -p 6600 -m ~/music/ -a ~/.covers -l current
+```
+
+### With the Python module (the manual way)
+#### Hook up to the MPD server
 ```python
 import mpd_album_art, mpd
 # Open an MPD client
@@ -24,13 +30,13 @@ mpd_client = MPDClient()
 mpd_client.connect("localhost", 6600)
 # ...
 ```
-### Find what's making those groovy vibes
+#### Find what's making those groovy vibes
 ```python
 # ...
 song = mpd_client.currentsong()
 # ...
 ```
-### Grab some art
+#### Grab some art
 Artwork is saved to `save_dir`
 `library_dir` should be where your music files are (this is used in `Grabber.get_local_art`)
 ```python
