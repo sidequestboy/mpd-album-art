@@ -2,12 +2,9 @@
 
 Python module to query current MPD song, and find an album art match from local filesystem or LastFM.
 
-## Requirements
-`pylast`
-`python-mpd2`
-
+## Install
 ```sh
-$ pip install -r requirements.txt
+$ pip install mpd-album-art
 ```
 
 ## Example Usage
