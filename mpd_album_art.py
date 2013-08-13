@@ -241,15 +241,28 @@ def _sanitize(name):
 
 
 if __name__ == '__main__':
+    import argparse, os
+
+    home_dir = os.environ['HOME']
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-n', '--hostname', type=str, default='localhost')
+    parser.add_argument('-p', '--port', type=int, default=6600)
+    parser.add_argument('-m', '--music_dir', type=str,
+                        default=os.path.join(home_dir, 'Music'))
+    parser.add_argument('-a', '--art_dir', type=str,
+                        default=os.path.join(home_dir, '.covers'))
+    parser.add_argument('-l', '--link_name', type=str, default='current')
+    args = parser.parse_args()
+
     # initialize MPD client
     mpd_client = MPDClient()
 
-    grabber = Grabber(save_dir="/home/jamie/.conky/scripts/album_art",
-                      library_dir="/home/jamie/Music/Library")
+    grabber = Grabber(save_dir=args.art_dir, library_dir=args.music_dir,
+                      link_path=os.path.join(args.art_dir, args.link_name))
 
     try:
         # connect client to MPD server
-        mpd_client.connect("localhost", 6600)
+        mpd_client.connect(args.hostname, args.port)
     except socket.error:
         # Cannot connect
         sys.stderr.write('MPD not running?'+'\n')
