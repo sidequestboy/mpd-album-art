@@ -32,19 +32,16 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>
-<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
 
-<p><code>pylast</code>
-<code>python-mpd2</code></p>
-
-<div class="highlight"><pre><span class="nv">$ </span>pip install -r requirements.txt
+<div class="highlight"><pre><span class="nv">$ </span>pip install mpd-album-art
 </pre></div>
 
 <h2>
 <a name="example-usage" class="anchor" href="#example-usage"><span class="octicon octicon-link"></span></a>Example Usage</h2>
 
-<h3>
-<a name="play-some-jams" class="anchor" href="#play-some-jams"><span class="octicon octicon-link"></span></a>Play some jams</h3>
+<h4>
+<a name="play-some-jams" class="anchor" href="#play-some-jams"><span class="octicon octicon-link"></span></a>Play some jams</h4>
 
 <p>Start up your MPD session as normal, e.g.</p>
 
@@ -54,7 +51,16 @@
 <p>Take note of which port it's running on (normally <code>localhost:6600</code>).</p>
 
 <h3>
-<a name="hook-up-to-the-mpd-server" class="anchor" href="#hook-up-to-the-mpd-server"><span class="octicon octicon-link"></span></a>Hook up to the MPD server</h3>
+<a name="with-the-commandline-script-the-easy-way" class="anchor" href="#with-the-commandline-script-the-easy-way"><span class="octicon octicon-link"></span></a>With the commandline script (the easy way)</h3>
+
+<div class="highlight"><pre><span class="nv">$ </span>mpd_album_art.py -n localhost -p 6600 -m ~/music/ -a ~/.covers -l current
+</pre></div>
+
+<h3>
+<a name="with-the-python-module-the-manual-way" class="anchor" href="#with-the-python-module-the-manual-way"><span class="octicon octicon-link"></span></a>With the Python module (the manual way)</h3>
+
+<h4>
+<a name="hook-up-to-the-mpd-server" class="anchor" href="#hook-up-to-the-mpd-server"><span class="octicon octicon-link"></span></a>Hook up to the MPD server</h4>
 
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">mpd_album_art</span><span class="o">,</span> <span class="nn">mpd</span>
 <span class="c"># Open an MPD client</span>
@@ -64,16 +70,16 @@
 <span class="c"># ...</span>
 </pre></div>
 
-<h3>
-<a name="find-whats-making-those-groovy-vibes" class="anchor" href="#find-whats-making-those-groovy-vibes"><span class="octicon octicon-link"></span></a>Find what's making those groovy vibes</h3>
+<h4>
+<a name="find-whats-making-those-groovy-vibes" class="anchor" href="#find-whats-making-those-groovy-vibes"><span class="octicon octicon-link"></span></a>Find what's making those groovy vibes</h4>
 
 <div class="highlight"><pre><span class="c"># ...</span>
 <span class="n">song</span> <span class="o">=</span> <span class="n">mpd_client</span><span class="o">.</span><span class="n">currentsong</span><span class="p">()</span>
 <span class="c"># ...</span>
 </pre></div>
 
-<h3>
-<a name="grab-some-art" class="anchor" href="#grab-some-art"><span class="octicon octicon-link"></span></a>Grab some art</h3>
+<h4>
+<a name="grab-some-art" class="anchor" href="#grab-some-art"><span class="octicon octicon-link"></span></a>Grab some art</h4>
 
 <p>Artwork is saved to <code>save_dir</code>
 <code>library_dir</code> should be where your music files are (this is used in <code>Grabber.get_local_art</code>)</p>
