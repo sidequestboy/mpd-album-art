@@ -101,7 +101,6 @@ class Grabber(object):
         if l != []:
             sys.stderr.write("Already have this album\n")
             file_path = os.path.join(self.save_dir, l[0])
-            self.link_path = os.path.join(self.save_dir, "current")
 
             # We have album art - check if it's linked
             if os.path.realpath(self.link_path) != file_path:
@@ -183,14 +182,18 @@ class Grabber(object):
 
 
     def remove_current_link(self):
-        self.link_path = os.path.join(self.save_dir, "current")
+        """Delete current artwork symlink.
+        """
         try:
             os.unlink(self.link_path)
         except FileNotFoundError:
             pass
 
     def set_current_link(self, file_path):
-        self.link_path = os.path.join(self.save_dir, "current")
+        """Set current artwork symlink.
+        :param file_path:
+            Path to artwork to be set as current.
+        """
         os.symlink(file_path, self.link_path)
 
     def _get_save_name(self, song, img_url=None):
