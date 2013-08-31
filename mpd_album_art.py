@@ -111,7 +111,7 @@ class Grabber(object):
             return file_path
 
         # Define the search network compatible with LastFM API
-        network = LastFMNetwork(api_key = last_fm_api_key)
+        network = LastFMNetwork(api_key = _last_fm_api_key)
 
         album_search = AlbumSearch(song['album'], network)
 
@@ -225,7 +225,7 @@ class Grabber(object):
             A list of file names from within ``folder`` that end with an extension
             defined in the ``image_extensions`` tuple.
         """
-        return [f for f in os.listdir(folder) if f.endswith(image_extensions)]
+        return [f for f in os.listdir(folder) if f.endswith(_image_extensions)]
 
 
 def _sanitize(name):
@@ -276,7 +276,7 @@ if __name__ == '__main__':
         grabber.remove_current_link()
 
     # try local pics
-    if grabber.get_local_art(current_song) is not None:
+    elif grabber.get_local_art(current_song) is not None:
         sys.stderr.write('Found local image, not querying LastFM.\n')
     
     # try lastFM pics
