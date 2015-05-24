@@ -113,7 +113,7 @@ class Grabber(object):
         # Define the search network compatible with LastFM API
         network = LastFMNetwork(api_key = _last_fm_api_key)
 
-        album_search = AlbumSearch(song['album'], network)
+        album_search = AlbumSearch(song['artist'] + ' ' + song['album'], network)
 
         if album_search.get_total_result_count() == 0:
             # Remove current album link, and return, since no art was found for
